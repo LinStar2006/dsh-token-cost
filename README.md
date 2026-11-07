@@ -65,15 +65,25 @@ The script fetches and validates each year (a suspiciously low number of days is
 
 ## Installation
 
-### Option 1: plugin manager (recommended)
+### Option 1: install from the GitHub repository (recommended)
 
-With a host that exposes the `plugin_manager` tool, install straight from a local directory:
+In DSH Desktop open **Plugins → Add plugin** and paste the repository address into the input box:
 
 ```
-plugin_manager action=install_bundle <repo>
+https://github.com/LinStar2006/dsh-token-cost
 ```
 
-### Option 2: manual
+The shorthand `github:LinStar2006/dsh-token-cost` works as well. Then turn the plugin on in the Plugins page; restart DSH Desktop once if it does not show up right away.
+
+### Option 2: plugin manager tool
+
+With a host that exposes the `plugin_manager` tool, install the same repository address:
+
+```
+plugin_manager action=install_bundle https://github.com/LinStar2006/dsh-token-cost
+```
+
+### Option 3: manual
 
 1. Clone this repository anywhere (referred to below as `<repo>`).
 2. Add the following to the profile `package.json`:

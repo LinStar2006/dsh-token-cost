@@ -65,15 +65,25 @@ node scripts/update-holidays.mjs 2027 2028
 
 ## 安装
 
-### 方式一：插件管理器（推荐）
+### 方式一：用仓库地址安装（推荐）
 
-宿主提供 `plugin_manager` 工具时，可直接以本地目录安装：
+在 DSH Desktop 打开「插件 → 添加插件」，把仓库地址粘贴到输入框：
 
 ```
-plugin_manager action=install_bundle <仓库目录>
+https://github.com/LinStar2006/dsh-token-cost
 ```
 
-### 方式二：手动安装
+也支持简写 `github:LinStar2006/dsh-token-cost`。安装完成后在插件页启用；若状态栏没有立即出现，重启一次 DSH Desktop。
+
+### 方式二：插件管理器工具
+
+宿主提供 `plugin_manager` 工具时，可直接安装同一个仓库地址：
+
+```
+plugin_manager action=install_bundle https://github.com/LinStar2006/dsh-token-cost
+```
+
+### 方式三：手动安装
 
 1. 把本仓库放到任意目录（下文记为 `<repo>`）。
 2. 在 profile 的 `package.json` 中加入：
