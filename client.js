@@ -18,7 +18,7 @@ window.__ModuleLoader__.load({
 			"panel.peak": "高峰时段",
 			"panel.offpeak": "空闲时段",
 			"panel.unpriced": "未收录价目的请求",
-			"panel.note": "价目表来自 DeepSeek 官方定价：deepseek-flash 未命中 ¥1/M、命中 ¥0.02/M、输出 ¥4/M（空闲档，高峰档 ×2）。高峰时段为北京时间周一至周五 9:00–12:00 与 14:00–18:00（法定节假日除外）；周末与法定节假日全天按空闲档计价，调休补班日即使落在周六周日也按空闲档计价。不含子代理会话的花费。",
+			"panel.note": "价目表来自 DeepSeek 官方定价，数据可能存在延迟而并不准确，请以官方定价为准。子代理单独计费，不包含在本次会话内。",
 			"panel.holidays": "节假日数据",
 			"panel.titleValue": "精确金额",
 		};
@@ -34,7 +34,7 @@ window.__ModuleLoader__.load({
 			"panel.peak": "Peak band",
 			"panel.offpeak": "Off-peak band",
 			"panel.unpriced": "Unpriced requests",
-			"panel.note": "Prices follow the official DeepSeek price list: deepseek-flash ¥1/M miss, ¥0.02/M hit, ¥4/M output (off-peak; peak is 2x). Peak band is Beijing time Monday to Friday 09:00–12:00 and 14:00–18:00, excluding statutory holidays. Weekends and statutory holidays are off-peak all day, and make-up workdays keep the off-peak band even when they fall on a weekend. Sub-agent conversations are not included.",
+			"panel.note": "Prices come from the official DeepSeek price list; data may be delayed and not exact, so the official pricing prevails. Subagent sessions are billed separately and are not included in this conversation.",
 			"panel.holidays": "Holiday data",
 			"panel.titleValue": "Exact amount",
 		};
