@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Conversation cost",
+    "description": "Shows how much this conversation has cost in the composer status bar, priced per request against the peak/off-peak price band and the model that served it."
+  }
+}
