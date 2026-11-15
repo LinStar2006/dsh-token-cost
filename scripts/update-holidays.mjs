@@ -2,8 +2,8 @@
  * Extend or refresh holidays.js with another year of the State Council holiday
  * calendar.
  *
- *   node scripts/update-holidays.mjs 2027
- *   node scripts/update-holidays.mjs 2027 2028
+ *   node scripts/update-holidays.mjs 2028
+ *   node scripts/update-holidays.mjs 2028 2029
  *
  * The data comes from the public mirror `https://timor.tech/api/holiday/year/<year>`,
  * which republishes the State Council notice (国务院办公厅关于部分节假日安排的通知).
@@ -63,7 +63,10 @@ function render(offDays, makeUpDays, years) {
 		}
 		return lines.join("\n");
 	};
-	const covered = years.length === 1 ? years[0] : `${years[0]}, ${years[years.length - 1]}`;
+	const contiguous = years.every((year, index) => index === 0 || year === years[index - 1] + 1);
+	const covered = !contiguous
+		? years.join(", ")
+		: years.length === 1 ? String(years[0]) : `${years[0]}-${years[years.length - 1]}`;
 	return `/**
  * Chinese statutory holiday calendar, in Beijing time (UTC+8).
  *
@@ -72,14 +75,13 @@ function render(offDays, makeUpDays, years) {
  * OFF_DAYS is always off-peak, whatever weekday it happens to be.
  *
  * MAKEUP_WORKDAYS lists the make-up workdays (调休补班) the State Council
- * schedules around long holidays. They are recorded for completeness, but the
+ * schedules around long holidays. They are recorded for completeness only: the
  * official wording restricts peak hours to Monday-Friday, so a Saturday or
- * Sunday make-up day stays off-peak unless PEAK_ON_MAKEUP_WORKDAYS is turned on
- * in index.js.
+ * Sunday make-up day stays off-peak, and index.js does not read these dates.
  *
  * Source: State Council annual holiday notices (国务院办公厅关于部分节假日安排的通知),
  * cross-checked against https://timor.tech/api/holiday/year/<year>.
- * Regenerate / extend: \`node scripts/update-holidays.mjs 2027 2028\`.
+ * Regenerate / extend: \`node scripts/update-holidays.mjs 2028\`.
  *
  * Years covered: ${covered}. Instants outside these years fall back to the
  * plain weekday rule, which is off by up to 2x on holiday daytime.

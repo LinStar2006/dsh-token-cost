@@ -53,12 +53,12 @@ cost = 未命中输入 × In_miss + 缓存写输入 × In_write + 缓存命中�
 
 ## 节假日表
 
-`holidays.js` 是生成文件，内置 2025–2026 年国务院放假安排（数据源 [timor.tech](https://timor.tech/api/holiday)）。补班日期也一并生成，但当前计价规则不使用它们——它们只作为数据保留，便于将来官方口径调整时直接启用。
+`holidays.js` 是生成文件，内置 2025–2027 年国务院放假安排（数据源 [timor.tech](https://timor.tech/api/holiday)）。补班日期也一并生成，但当前计价规则不使用它们——它们只作为数据保留，便于将来官方口径调整时直接启用。
 
 更新方式：
 
 ```bash
-node scripts/update-holidays.mjs 2027 2028
+node scripts/update-holidays.mjs 2028
 ```
 
 脚本会逐年拉取并校验完整性（放假天数明显不足视为日历未发布，拒绝写入并以非零码退出），合并后确定性重写 `holidays.js`，重复运行结果不变。请勿手工编辑该文件。

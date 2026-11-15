@@ -53,12 +53,12 @@ CNY per million tokens (snapshot 2026-10-17; the [official pricing page](https:/
 
 ## Holiday table
 
-`holidays.js` is a generated file embedding the State Council holiday calendar for 2025–2026 (source: [timor.tech](https://timor.tech/api/holiday)). Make-up workdays are generated as well, but the current pricing rule does not use them — they are kept as data so that a future rule change can enable them directly.
+`holidays.js` is a generated file embedding the State Council holiday calendar for 2025–2027 (source: [timor.tech](https://timor.tech/api/holiday)). Make-up workdays are generated as well, but the current pricing rule does not use them — they are kept as data so that a future rule change can enable them directly.
 
 To update:
 
 ```bash
-node scripts/update-holidays.mjs 2027 2028
+node scripts/update-holidays.mjs 2028
 ```
 
 The script fetches and validates each year (a suspiciously low number of days is treated as an unpublished calendar and rejected with a non-zero exit code), merges the result, and deterministically rewrites `holidays.js`; rerunning is a no-op. Do not edit that file by hand.
